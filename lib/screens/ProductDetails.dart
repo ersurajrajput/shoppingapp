@@ -18,7 +18,7 @@ class _ProductdetailsState extends State<Productdetails> {
               child: Image.network(
                 width: 400,
                 height: 400,
-                "https://raw.githubusercontent.com/ersurajrajput/shoppingapp/refs/heads/main/img/headphone.png",
+                "https://raw.githubusercontent.com/ersurajrajput/shoppingapp/refs/heads/main/img/headphone2.png",
               ),
             ),
           ],
