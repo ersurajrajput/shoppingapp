@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shoppingapp/component/Button.dart';
-import 'package:shoppingapp/component/ProductTIles.dart';
 import 'package:shoppingapp/screens/home.dart';
-import 'package:shoppingapp/screens/onboarding.dart';
 
 void main() {
   runApp(const MyApp());

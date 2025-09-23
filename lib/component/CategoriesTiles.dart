@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shoppingapp/Models/category_model.dart';
-import 'package:shoppingapp/constants/colors.dart';
 
 class Categoriestiles extends StatelessWidget {
   final CategoryModel cat;
@@ -23,7 +22,7 @@ class Categoriestiles extends StatelessWidget {
                   child: Column(
                     children: [
                       SvgPicture.asset(
-                        cat.iconPath!!, // your SVG path
+                        cat.iconPath, // your SVG path
                         width: 70,
                         height: 70,
                         fit: BoxFit.cover,

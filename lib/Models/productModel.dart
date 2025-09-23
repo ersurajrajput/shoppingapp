@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 class Productmodel {
   String pName;
   String pImg;
