@@ -22,8 +22,8 @@ class Producttiles extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Center(
-                  child: Image.asset(
-                    "img/headphone.png",
+                  child: Image.network(
+                    "https://raw.githubusercontent.com/ersurajrajput/shoppingapp/refs/heads/main/img/headphone.png",
                     width: 100,
                     height: 100,
                   ),
