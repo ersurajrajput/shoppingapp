@@ -3,6 +3,7 @@ import 'package:shoppingapp/Models/category_model.dart';
 import 'package:shoppingapp/Models/productModel.dart';
 import 'package:shoppingapp/component/CategoriesTiles.dart';
 import 'package:shoppingapp/component/ProductTIles.dart';
+import 'package:shoppingapp/constants/colors.dart';
 import 'package:shoppingapp/widget/AppWidget.dart';
 
 class Home extends StatefulWidget {
@@ -42,6 +43,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.background,
       body: SafeArea(
         child: SingleChildScrollView(
           padding: EdgeInsets.symmetric(horizontal: 20),
@@ -162,20 +164,26 @@ class _HomeState extends State<Home> {
               ),
               SizedBox(height: 20),
 
-              // Products Grid
-              GridView.builder(
-                shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                itemCount: pList.length,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 10,
-                  mainAxisSpacing: 10,
-                  childAspectRatio: 0.9,
-                ),
-                itemBuilder: (context, index) {
-                  return Producttiles(); // Use your Producttiles widget
-                },
+              // Categories Row
+              Row(
+                children: [
+                  // Product List
+                  Expanded(
+                    child: SizedBox(
+                      height: 200,
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: catList.length,
+                        itemBuilder: (context, index) {
+                          return Padding(
+                            padding: EdgeInsets.only(right: 10),
+                            child: Producttiles(),
+                          );
+                        },
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shoppingapp/screens/home.dart';
+import 'package:shoppingapp/screens/BottomNav.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,6 +10,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: const Home());
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: const BottomNav(),
+    );
   }
 }

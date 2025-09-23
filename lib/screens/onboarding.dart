@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shoppingapp/component/Button.dart';
 import 'package:shoppingapp/component/Button2.dart';
 import 'package:shoppingapp/constants/colors.dart';
 
@@ -14,7 +13,7 @@ class _OnboardingState extends State<Onboarding> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.bgColor,
+      backgroundColor: AppColors.background,
       body: Container(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
