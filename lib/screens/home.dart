@@ -32,6 +32,7 @@ class _HomeState extends State<Home> {
     for (int i = 0; i < 8; i++) {
       pList.add(
         Productmodel(
+          pId: i.toString(),
           pName: "Headphones",
           pPrice: 102,
           pImg: "img/headphone.png",

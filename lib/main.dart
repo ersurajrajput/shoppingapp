@@ -1,8 +1,14 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:shoppingapp/screens/BottomNav.dart';
 import 'package:shoppingapp/screens/ProductDetails.dart';
+import 'package:shoppingapp/screens/Register.dart';
+import 'package:shoppingapp/screens/home.dart';
+import 'package:shoppingapp/screens/login.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -11,9 +17,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: const Productdetails(),
-    );
+    return MaterialApp(debugShowCheckedModeBanner: false, home: Register());
   }
 }

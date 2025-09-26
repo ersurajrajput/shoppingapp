@@ -18,9 +18,12 @@ class Appwidget {
     );
   }
 
-  static TextStyle textFieldStyle1({final Color? textColor = Colors.black}) {
+  static TextStyle textFieldStyle1({
+    final Color? textColor = Colors.black,
+    double textSize = 20,
+  }) {
     return TextStyle(
-      fontSize: 20,
+      fontSize: textSize,
       fontWeight: FontWeight.bold,
       color: textColor,
     );
