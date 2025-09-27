@@ -4,6 +4,7 @@ import 'package:shoppingapp/Models/productModel.dart';
 import 'package:shoppingapp/component/CategoriesTiles.dart';
 import 'package:shoppingapp/component/ProductTIles.dart';
 import 'package:shoppingapp/constants/colors.dart';
+import 'package:shoppingapp/repos/ProductsRepo.dart';
 import 'package:shoppingapp/widget/AppWidget.dart';
 
 class Home extends StatefulWidget {
@@ -27,18 +28,16 @@ class _HomeState extends State<Home> {
     );
     catList.add(CategoryModel(name: "TV", iconPath: "img/tv.svg"));
     catList.add(CategoryModel(name: "Laptop", iconPath: "img/laptop.svg"));
+    loadProducts();
 
     // Products
-    for (int i = 0; i < 8; i++) {
-      pList.add(
-        Productmodel(
-          pId: i.toString(),
-          pName: "Headphones",
-          pPrice: 102,
-          pImg: "img/headphone.png",
-        ),
-      );
-    }
+  }
+
+  void loadProducts() async {
+    List<Productmodel> products = await Productsrepo().getProducts();
+    setState(() {
+      pList = products;
+    });
   }
 
   @override
@@ -178,7 +177,7 @@ class _HomeState extends State<Home> {
                         itemBuilder: (context, index) {
                           return Padding(
                             padding: EdgeInsets.only(right: 10),
-                            child: Producttiles(),
+                            child: Producttiles(productmodel: pList[index]),
                           );
                         },
                       ),

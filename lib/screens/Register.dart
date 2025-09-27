@@ -5,6 +5,7 @@ import 'package:shoppingapp/Models/productModel.dart';
 import 'package:shoppingapp/component/Button.dart';
 import 'package:shoppingapp/constants/colors.dart';
 import 'package:shoppingapp/repos/ProductsRepo.dart';
+import 'package:shoppingapp/screens/BottomNav.dart';
 import 'package:shoppingapp/screens/login.dart';
 import 'package:shoppingapp/widget/AppWidget.dart';
 
@@ -38,7 +39,7 @@ class _RegisterState extends State<Register> {
           // Navigate to login after success
           Navigator.pushReplacement(
             context,
-            MaterialPageRoute(builder: (context) => const Login()),
+            MaterialPageRoute(builder: (context) => const BottomNav()),
           );
         } on FirebaseAuthException catch (e) {
           Fluttertoast.showToast(msg: e.message ?? "Error occurred");
@@ -52,28 +53,6 @@ class _RegisterState extends State<Register> {
   @override
   void initState() {
     super.initState();
-    addSampleProduct();
-  }
-
-  Future<void> addSampleProduct() async {
-    var productmodel = Productmodel(
-      pName: "Sample Product",
-      pPrice: 100,
-      pImg: 'https://example.com/headphone.png',
-      pId: "pId",
-    );
-
-    // only call addProduct (remove _repo.add() if not implemented)
-    await _repo.addProduct(productmodel);
-
-    Fluttertoast.showToast(
-      msg: "Sample product added",
-      toastLength: Toast.LENGTH_SHORT,
-      gravity: ToastGravity.BOTTOM,
-      backgroundColor: Colors.black,
-      textColor: Colors.white,
-      fontSize: 16.0,
-    );
   }
 
   @override

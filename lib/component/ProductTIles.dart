@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:shoppingapp/Models/productModel.dart';
 import 'package:shoppingapp/widget/AppWidget.dart';
 
 class Producttiles extends StatelessWidget {
-  const Producttiles({super.key});
+  final Productmodel productmodel;
+  const Producttiles({required this.productmodel});
 
   @override
   Widget build(BuildContext context) {
@@ -23,12 +25,12 @@ class Producttiles extends StatelessWidget {
               children: [
                 Center(
                   child: Image.network(
-                    "https://raw.githubusercontent.com/ersurajrajput/shoppingapp/refs/heads/main/img/headphone.png",
+                    productmodel.pImg,
                     width: 100,
                     height: 100,
                   ),
                 ),
-                Text("Product Name", style: Appwidget.textFieldStyle1()),
+                Text(productmodel.pName, style: Appwidget.textFieldStyle1()),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -41,7 +43,7 @@ class Producttiles extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          "102",
+                          productmodel.pPrice.toString(),
                           style: Appwidget.textFieldStyle1(
                             textColor: Colors.red,
                           ),

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shoppingapp/component/Button.dart';
 import 'package:shoppingapp/constants/colors.dart';
+import 'package:shoppingapp/screens/BottomNav.dart';
 import 'package:shoppingapp/screens/Register.dart';
 import 'package:shoppingapp/screens/home.dart';
 import 'package:shoppingapp/widget/AppWidget.dart';
@@ -30,7 +31,7 @@ class _LoginState extends State<Login> {
         // Navigate to login after success
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => const Home()),
+          MaterialPageRoute(builder: (context) => const BottomNav()),
         );
       } on FirebaseAuthException catch (e) {
         Fluttertoast.showToast(msg: e.message ?? "Error occurred");
